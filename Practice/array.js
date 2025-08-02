@@ -37,15 +37,27 @@ const prompt = require("prompt-sync")()
 // console.log(sum);
 
 //max-element in array
-let arr3 = [10, 40, 50, 60, 6000, 50000, 25, 33, 54, 1, 15]
-let max = arr3[0]
+let arr3 = [10, 40, 50, 60, 6000, 500, 25, 25, 500, 33, 54, 1, 15]
+// let max = arr3[0]
+// for (let i = 1; i < arr3.length; i++) {
+//     if (arr3[i] > max) {
+//         max = arr3[i]
+//     }
+// }
 
-for (let i = 1; i < arr3.length; i++) {
-    if (arr3[i] > max) {
+// console.log(max);
+//find second largest in array
+let max = Math.max(arr3[0], arr3[1])
+let sMax = Math.min(arr3[0], arr3[1])
+for (let i = 2; i < arr3.length; i++) {
+    if (max < arr3[i]) {
+        sMax = max;
         max = arr3[i]
+    } else if (sMax < arr3[i]) {
+        sMax = arr3[i]
     }
 }
 
-console.log(max);
+console.log(sMax);
 
 
