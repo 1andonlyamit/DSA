@@ -1,213 +1,237 @@
-// let a = "amit" + 1
-// let b = "amit" * 2
-// let c = 2 * "amit"
-// let d = 2 + "amit"
-// let f = 2 * "amit"
+const prompt = require("prompt-sync")();
 
-// console.log(a)
-// console.log(b)
-// console.log(c)
-// console.log(d)
-// console.log(f)
+// =====================
+// 1. String and Number Operations
+// =====================
+// Demonstrates how JavaScript handles operations between strings and numbers
+console.log("1. String and Number Operations:");
+let a1 = "amit" + 1; // Concatenation
+let b1 = "amit" * 2; // NaN
+let c1 = 2 * "amit"; // NaN
+let d1 = 2 + "amit"; // Concatenation
+let f1 = 2 * "amit"; // NaN
+console.log('let a = "amit" + 1:', a1);
+console.log('let b = "amit" * 2:', b1);
+console.log('let c = 2 * "amit":', c1);
+console.log('let d = 2 + "amit":', d1);
+console.log('let f = 2 * "amit":', f1);
+console.log("\n");
 
-// let a = prompt("Hii")
-// console.log(a);
+// =====================
+// 2. Prompt Input Example
+// =====================
+console.log("2. Prompt Input Example:");
+let a2 = prompt("Enter your name: ");
+console.log("You entered:", a2);
+console.log("\n");
 
-//swap two numbers
-// a = 10;
-// b = 5
-// console.log("before swap: " + a, b);
-// a = a + b
-// b = a - b
-// a = a - b
-// [a, b] = [b, a]
-// console.log("After swap: " + a, b);
+// =====================
+// 3. Swapping Two Numbers
+// =====================
+console.log("3. Swapping Two Numbers:");
+let a3 = 10, b3 = 5;
+console.log("Before swap:", a3, b3);
+// Using arithmetic
+a3 = a3 + b3;
+b3 = a3 - b3;
+a3 = a3 - b3;
+console.log("After swap using arithmetic:", a3, b3);
+// Using array destructuring
+[a3, b3] = [b3, a3];
+console.log("After swap using destructuring:", a3, b3);
+console.log("\n");
 
-// let i =11
-// i=i++ + ++i
+// =====================
+// 4. Increment/Decrement Operator Examples
+// =====================
+console.log("4. Increment/Decrement Operator Examples:");
+let i4 = 11;
+i4 = i4++ + ++i4;
+console.log("Result of i = i++ + ++i when i starts at 11:", i4);
 
-// console.log(i);
+let a4 = 11, b4 = 22, c4;
+c4 = a4 + b4 + a4++ + b4++ + ++a4 + ++b4;
+console.log("a after operations:", a4);
+console.log("b after operations:", b4);
+console.log("c after operations:", c4);
+console.log("\n");
 
-// let a = 11, b = 22, c;
-// c = a + b + a++ + b++ + ++a + ++b;
-// console.log("a=" + a);
-// console.log("b=" + b);
-// console.log("c=" + c)
+// =====================
+// 5. Boolean and Math Operations
+// =====================
+console.log("5. Boolean and Math Operations:");
+let b5 = true;
+b5++;
+console.log("true incremented by 1:", b5);
+console.log("\n");
 
-// let i = 0; 
-// i = i++ - --i + ++i - i--; 
-// console.log(i)
+// =====================
+// 6. Math Object Methods
+// =====================
+console.log("6. Math Object Methods:");
+console.log("Math.ceil(10.7):", Math.ceil(10.7));
+console.log("Math.floor(10.7):", Math.floor(10.7));
+console.log("Math.round(10.7):", Math.round(10.7));
+console.log("Math.pow(10, 3):", Math.pow(10, 3));
+console.log("Math.abs(-10.7):", Math.abs(-10.7));
+console.log("Math.trunc(10.74544444444444444):", Math.trunc(10.74544444444444444));
+console.log("Math.sqrt(10):", Math.sqrt(10));
+console.log("Math.cbrt(10):", Math.cbrt(10));
+console.log("Math.min(10.7, 4, 555, 34):", Math.min(10.7, 4, 555, 34));
+console.log("Math.max(10.7, 4, 555, 34):", Math.max(10.7, 4, 555, 34));
+console.log("Math.random():", Math.random());
+let a6 = 24.44564668;
+console.log("a.toFixed():", a6.toFixed());
+console.log("\n");
 
-// let b = true; 
-// b++;   
-// console.log(b)
+// =====================
+// 7. Functions: Circle Properties
+// =====================
+console.log("7. Functions: Circle Properties (Area and Circumference):");
+function calculateCircleProperties(r) {
+    let area = Math.PI * r * r;
+    let c = 2 * r * Math.PI;
+    return [c, area];
+}
+const [circumference, area] = calculateCircleProperties(5);
+console.log("For radius 5: Circumference =", circumference, ", Area =", area);
+console.log("\n");
 
-// let i = 1, j = 2, k = 3; 
-// let m = i-- - j-- - k--; 
-// console.log("i=" + i); 
-// console.log("j=" + j); 
-// console.log("k=" + k); 
-// console.log("m=" + m)
+// =====================
+// 8. Conditional Statements: Leap Year Check
+// =====================
+console.log("8. Conditional Statements: Leap Year Check:");
+let ly = Number(prompt("Enter a year to check if it's a leap year: "));
+let isLeap = false;
+if (ly % 4 == 0) {
+    if (ly % 100 == 0) {
+        if (ly % 400 == 0) {
+            isLeap = true;
+        } else {
+            isLeap = false;
+        }
+    } else {
+        isLeap = true;
+    }
+} else {
+    isLeap = false;
+}
+console.log(isLeap ? "Yes, it's a Leap year." : "Not a Leap year.");
+console.log("\n");
 
-// let a = 1, b = 2; 
-// console.log(--b - ++a + ++b - --a);
+// =====================
+// 9. Functions: Find Greatest of Three Numbers
+// =====================
+console.log("9. Functions: Find Greatest of Three Numbers:");
+function findGreatest(a, b, c) {
+    return (a > b) ? (a > c ? a : c) : (b > c ? b : c);
+}
+console.log("Greatest among 10, 20, 15 is:", findGreatest(10, 20, 15));
+console.log("\n");
 
-// let i = 19, j = 29, k; 
-// k = i-- - i++ + --j - ++j + --i - j-- + ++i - j++; 
-// console.log("i=" + i); 
-// console.log("j=" + j); 
-// console.log("k=" + k)
+// =====================
+// 10. Loops: Factorial Calculation
+// =====================
+console.log("10. Loops: Factorial Calculation:");
+let num10 = 5;
+let factorial10 = 1;
+for (let i = 1; i <= num10; i++) {
+    factorial10 *= i;
+}
+console.log("Factorial of 5 is:", factorial10);
+console.log("\n");
 
-// let i = 11;
-// let j = --(i++)
-// console.log(j);
+// =====================
+// 11. Loops: Print N to 1
+// =====================
+console.log("11. Loops: Print N to 1:");
+function printNto1(n) {
+    let number = "";
+    for (let i = n; i >= 1; i--) {
+        number += i + " ";
+    }
+    console.log("Numbers from", n, "to 1:", number.trim());
+}
+printNto1(5);
+console.log("\n");
 
-// let m = 0, n = 0; 
-// let p = --m * --n * n-- * m--; 
-// console.log(p)
+// =====================
+// 12. Switch Statement Example
+// =====================
+console.log("12. Switch Statement Example:");
+let n12 = 1;
+switch (n12) {
+    case 1:
+    case 2: console.log("hii"); break;
+    case 3:
+    case 4: console.log("bye"); break;
+    default: console.log("lele");
+}
+console.log("\n");
 
-// let a = 1; 
-// a = a++ + ++a * --a - a--; 
-// console.log(a)
+// =====================
+// 13. Functions: Factorial and Strong Number Check
+// =====================
+console.log("13. Functions: Factorial and Strong Number Check:");
+function fact(n) {
+    let factorial = 1;
+    for (let i = 1; i <= n; i++) {
+        factorial *= i;
+    }
+    return factorial;
+}
+function isStrongNumber(n) {
+    let number = n, sum = 0;
+    while (n > 0) {
+        let rem = n % 10;
+        sum += fact(rem);
+        n = Math.floor(n / 10);
+    }
+    return sum == number ? "Yes" : "No";
+}
+console.log("Is 145 a Strong Number?", isStrongNumber(145));
+console.log("\n");
 
-// let a = 11++;
-// console.log(a)
+// =====================
+// 14. Functions: Automorphic Number Check
+// =====================
+console.log("14. Functions: Automorphic Number Check:");
+function isAutomorphic(n) {
+    let square = n * n;
+    let digits = 0, temp = n;
+    while (temp > 0) {
+        digits++;
+        temp = Math.floor(temp / 10);
+    }
+    let lastDigits = square % Math.pow(10, digits);
+    return lastDigits === n ? "Yes" : "No";
+}
+console.log("Is 15 an Automorphic Number?", isAutomorphic(15));
+console.log("\n");
 
-// let i = 0, j = 0; 
-// console.log(--i * i++ * ++j * j++)
-
-// console.log(Math.ceil(10.7));
-// console.log(Math.floor(10.7));
-// console.log(Math.round(10.7));
-// console.log(Math.pow(10, 3));
-// console.log(Math.abs(-10.7));
-// console.log(Math.trunc(10.74544444444444444));
-// console.log(Math.sqrt(10));
-// console.log(Math.cbrt(10));
-// console.log(Math.min(10.7, 4, 555, 34));
-// console.log(Math.max(10.7, 4, 555, 34));
-// console.log(Math.random());
-// let a = 24.44564668
-// console.log(a.toFixed());
-
-// function calculateCircleProperties(r) {
-//     // Write your logic here
-//     area=Math.PI * r * r
-//     c=2 *r* Math.PI
-//     return c, area;
-// }
-// const [c, a]=calculateCircleProperties(5)
-// console.log(c, a);
-
-
-//CONDITIONAL STATEMENTS
-// let ly = Number(prompt("Enter a number"));
-// let isLeap = false;
-
-// if (ly % 4 == 0) {
-//     if (ly % 100 == 0 && ly % 400 == 0) {
-//         isLeap = true
-//     } else {
-//         isLeap = false
-//     }
-// } else { isLeap = false }
-
-// console.log(isLeap ? "Yes a Leap year" : "Not a Leap year");
-
-
-// function findGreatest(a, b, c) {
-//     // Write your logic here
-//     return (a>b) ? (a>c ? a : c) : (b>c ? b : c)
-// }
-
-
-
-// LOOPS
-// let num = 5
-// let factorial = 1;
-// for (i = 1; i <= num; i++) {
-//     factorial *= i;
-// }
-// console.log(factorial)
-
-
-// function printNto1(n) {
-//     let number="";
-//     for (i = n; i <= 1; i--) {
-//         number += i+" ";
-//     }   
-//     console.log(number.trim())
-// }
-
-// printNto1(5)
-// let num;
-// for (i = 1; i > 5; i++) {
-//     }   
-//     console.log(num)
-
-// let n = 1;
-// switch(n){
-//     case 1: 
-//     case 2: console.log("hii"); break;  
-//     case 3: 
-//     case 4: console.log("bye"); break;
-//     default: console.log("lele");         
-// }
-
-// function fact(n){
-//   let factorial = 1;
-// for (i = 1; i <= n; i++) {
-//     factorial *= i;}
-//     console.log(factorial);    
-//     return factorial;
-// }
-// function isStrongNumber(n) {
-//     // Write your logic here
-//     let number=n
-//     let sum=0
-//     while(n>0){
-//         rem=n%10
-//         console.log(rem);
-//         sum += fact(rem)
-//         console.log(sum);
-//         n=Math.floor(n/10)
-//     }
-
-//     console.log("sum: " + sum);
-//     console.log("n: " + n);
-
-//     return sum==n ? "Yes" : "No"
-// }
-
-// console.log(isStrongNumber(145))
-
-
-// function isAutomorphic(n) {
-//     let square=n*n
-//     let digits=0, temp=n;
-
-//     while(temp>0){
-//         digits++;
-//         temp=Math.floor(temp / 10);
-//     }
-//     let lastDigits=square % Math.pow(10, digits);
-//     console.log(lastDigits);
-
-//     return lastDigits === n ? "Yes" : "No";
-// }
-
-// console.log(isAutomorphic(15));
-
-let com = Math.floor(Math.random() * 100) + 1
+// =====================
+// 15. Guess the Number Game
+// =====================
+console.log("15. Guess the Number Game:");
+let com = Math.floor(Math.random() * 100) + 1;
 let UserInput;
 do {
-    UserInput = prompt("Enter Any Number")
-    if (isNaN(UserInput) || UserInput > 100 || UserInput < 0) {
-        console.log("Invalid Input");
+    UserInput = prompt("Enter any number between 1 and 100: ");
+    UserInput = Number(UserInput);
+    if (isNaN(UserInput) || UserInput > 100 || UserInput < 1) {
+        console.log("Invalid Input. Please enter a number between 1 and 100.");
         continue;
     }
-    if (UserInput > com) { console.log("Too High"); }
-    else if (UserInput < com) { console.log("Too Low"); }
-    else console.log("Yay You won the number is " + com);
+    if (UserInput > com) {
+        console.log("Too High");
+    } else if (UserInput < com) {
+        console.log("Too Low");
+    } else {
+        console.log("Yay! You won. The number is " + com);
+    }
+} while (com !== UserInput);
+console.log("\n");
 
-} while (com !== UserInput)
+// =====================
+// Add more basic concepts below as needed
+// =====================
